@@ -8,7 +8,8 @@ import { TProduct } from '../../../models/products';
 import style from '../../../styles/categoriesAdmin.module.css'
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
-import useCategories from '../../../hook/useCategory';
+import useCate from '../../../hook/useCategory';
+
 
 
 type PropsCategories = {
@@ -17,7 +18,7 @@ type PropsCategories = {
 
 const addCategories = () => {
 
-    const { create } = useCategories();
+    const { create } = useCate();
     const {
         register,
         handleSubmit,
