@@ -17,16 +17,16 @@ type PropsCategories = {
 }
 
 const addCategories = () => {
-
-    const { create } = useCate();
+    const router = useRouter();
+    const { _id } = router.query;
+    const { create } = useCategories(_id);
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm<PropsCategories>();
 
-    const router = useRouter();
-
+    
     const onSubmit: SubmitHandler<PropsCategories> = async (Category) => {
         await create(Category);
         toast.success("create successful Category")
